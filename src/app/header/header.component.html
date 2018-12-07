@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" (click)="toggleState()">
+        <span class="sr-only">Angular integration testing</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button> <!-- #1 -->
+      <a routerLink="/login" class="navbar-brand">SC</a>
+    </div>
+    <div class="collapse navbar-collapse in" [ngClass]="{ 'in': isIn }">
+      <ul class="nav navbar-nav">
+        <li><a role="tab" (click)="toggleState()" data-toggle="tab" routerLink="/voter">Voter</a></li>
+        <li><a role="tab" (click)="toggleState()" data-toggle="tab" routerLink="/todos">Todos</a></li>
+        <li><a role="tab" (click)="toggleState()" data-toggle="tab" routerLink="/users">Users</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
