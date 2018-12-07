@@ -23,13 +23,13 @@ export class VoterComponent {
   downVote() {
     if (this.myVote == -1)
         return;
-        
+
     this.myVote--;
 
     this.vote.emit({ myVote: this.myVote });
   }
 
-  get totalVotes() {
+  totalVotes() {
     return this.othersVote + this.myVote;
-  } 
+  }
 }

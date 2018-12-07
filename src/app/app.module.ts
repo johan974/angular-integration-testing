@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -12,27 +11,29 @@ import { VoterComponent } from './1-voter/voter.component';
 
 import { routes } from './app.routes';
 import { UsersComponent } from './users/users.component';
-// import { NavComponent } from './nav/nav.component';
 import { HighlightDirective } from './highlight.directive';
+import {HeaderComponent} from "./header/header.component";
+import {HttpClientModule} from "@angular/common/http";
+import {TodoService} from "./2-todos/todo.service";
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     HomeComponent,
     TodosComponent,
     UserDetailsComponent,
     VoterComponent,
     UsersComponent,
-    // NavComponent,
     HighlightDirective
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    FormsModule,
-    HttpModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
